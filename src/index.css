@@ -1,0 +1,12 @@
+body {
+  font-family: "Public Sans", sans-serif;
+}
+
+.navbar {
+  background: #04335e;
+}
+
+.actived {
+  background: #04335e;
+  color: white;
+}

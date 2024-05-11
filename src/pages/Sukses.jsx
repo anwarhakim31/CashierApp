@@ -11,7 +11,7 @@ export default class Sukses extends Component {
       <div className="mt-4 text-center ">
         <h2>Sukses Pesan</h2>
         <h2>Terima Kasih Sudah Memesan</h2>
-        <Image src="../../public/images/Succes.svg" width="200" className="d-block m-auto" />
+        <Image src="images/Succes.svg" width="200" className="d-block m-auto" />
 
         <Button className="theme " as={Link} to="/">
           Kembali

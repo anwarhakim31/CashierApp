@@ -10,7 +10,7 @@ export default class Sukses extends Component {
         <h2>Sukses Pesan</h2>
         <h2>Terima Kasih Sudah Memesan</h2>
         <Image
-          src="assets/images/succes.svg"
+          src="./assets/images/succes.svg"
           width="200"
           className="d-block m-auto"
         />

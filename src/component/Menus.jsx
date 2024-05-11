@@ -4,10 +4,14 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import numberFormat from "../utils/Number";
 
-const Menus = ({ menu }) => {
+const Menus = ({ menu, masukKeranjang }) => {
   return (
     <Col xs={12} md={6} lg={4}>
-      <Card className="shadow" style={{ cursor: "pointer" }}>
+      <Card
+        className="shadow"
+        style={{ cursor: "pointer" }}
+        onClick={() => masukKeranjang(menu)}
+      >
         <Card.Img
           variant="top"
           src={

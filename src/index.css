@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Public Sans", sans-serif;
 }
@@ -6,7 +10,56 @@ body {
   background: #04335e;
 }
 
+.theme {
+  background: #04335e;
+  &:hover {
+    background: navy;
+  }
+}
+
 .actived {
   background: #04335e;
   color: white;
+}
+
+.burger {
+  display: none;
+}
+
+.sidebar {
+  position: relative;
+}
+
+.hasil {
+  height: 65vh;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background: white;
+    box-shadow: -1px 0 5px #04335e;
+    display: none;
+  }
+  .sidebar.open {
+    display: block;
+  }
+}
+
+@media (max-width: 567px) {
+  .sidebar {
+    width: 100vw;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

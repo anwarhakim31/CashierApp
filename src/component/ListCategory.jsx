@@ -41,18 +41,18 @@ export default class ListCategory extends Component {
   render() {
     const { categories } = this.state;
     const { changeCategory, yangdipilih } = this.props;
+
     return (
       <Col md={2} className="">
-        <h2>
-          <strong>List Kategori</strong>
+        <h4>
+          <strong className="fs-md-5">List Kategori</strong>
           <hr />
-        </h2>
+        </h4>
 
-        <ListGroup className="" as="ul">
+        <ListGroup className="">
           {categories.map((categorie) => {
             const cate = (
               <ListGroup.Item
-                as="li"
                 key={categorie.id}
                 style={{ cursor: "pointer" }}
                 onClick={() => {

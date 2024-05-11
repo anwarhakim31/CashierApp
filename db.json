@@ -185,36 +185,19 @@
   ],
   "keranjangs": [
     {
-      "id": "5bea",
+      "id": "e089",
       "jumlah": 1,
-      "total_harga": 15000,
+      "total_harga": 12000,
       "product": {
-        "id": "10",
-        "kode": "K-010",
-        "nama": "Cheese Burger",
-        "harga": 15000,
+        "id": "3",
+        "kode": "K-03",
+        "nama": "Nasi Rames",
+        "harga": 12000,
         "is_ready": true,
-        "gambar": "cheese-burger.jpg",
+        "gambar": "nasi-rames.jpg",
         "category": {
-          "id": 3,
-          "nama": "Cemilan"
-        }
-      }
-    },
-    {
-      "id": "9867",
-      "jumlah": 1,
-      "total_harga": 5000,
-      "product": {
-        "id": "8",
-        "kode": "K-08",
-        "nama": "Pangsit 6 pcs",
-        "harga": 5000,
-        "is_ready": true,
-        "gambar": "pangsit.jpg",
-        "category": {
-          "id": 3,
-          "nama": "Cemilan"
+          "id": 1,
+          "nama": "Makanan"
         }
       }
     }

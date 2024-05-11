@@ -27,6 +27,40 @@ export default class Home extends Component {
         console.log(error);
       });
 
+    // axios
+    //   .get(API_URL + "keranjangs")
+    //   .then((res) => {
+    //     const keranjang = res.data;
+    //     this.setState({ keranjang });
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    this.getkeranjang();
+  }
+
+  componentDidUpdate() {
+    // axios
+    //   .get(API_URL + "products?category.nama=" + this.state.yangdipilih)
+    //   .then((res) => {
+    //     const menus = res.data;
+    //     this.setState({ menus });
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    // axios
+    //   .get(API_URL + "keranjangs")
+    //   .then((res) => {
+    //     const keranjang = res.data;
+    //     this.setState({ keranjang });
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  }
+
+  getkeranjang = () => {
     axios
       .get(API_URL + "keranjangs")
       .then((res) => {
@@ -36,11 +70,16 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
-  componentDidUpdate() {
+  changeCategory = (value) => {
+    this.setState((prevState) => ({
+      yangdipilih: value,
+      menus: [],
+    }));
+
     axios
-      .get(API_URL + "products?category.nama=" + this.state.yangdipilih)
+      .get(API_URL + "products?category.nama=" + value)
       .then((res) => {
         const menus = res.data;
         this.setState({ menus });
@@ -48,22 +87,6 @@ export default class Home extends Component {
       .catch((error) => {
         console.log(error);
       });
-    axios
-      .get(API_URL + "keranjangs")
-      .then((res) => {
-        const keranjang = res.data;
-        this.setState({ keranjang });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  changeCategory = (value) => {
-    this.setState((prevState) => ({
-      yangdipilih: value,
-      menus: [],
-    }));
   };
 
   masukKeranjang = (value) => {
@@ -80,8 +103,8 @@ export default class Home extends Component {
           axios
             .post(API_URL + "keranjangs", keranjang)
             .then((res) => {
+              this.getkeranjang();
               Swal.fire({
-                // Corrected function name to Swal.fire
                 title: "Sukses!",
                 text: keranjang.product.nama + " Masuk Keranjang ",
                 icon: "success",
@@ -101,8 +124,8 @@ export default class Home extends Component {
           axios
             .put(API_URL + "keranjangs/" + res.data[0].id, keranjang)
             .then((res) => {
+              this.getkeranjang();
               Swal.fire({
-                // Corrected function name to Swal.fire
                 title: "Sukses!",
                 text: keranjang.product.nama + " Masuk Keranjang ",
                 icon: "success",
@@ -152,6 +175,7 @@ export default class Home extends Component {
                 </Row>
               </Col>
               <Hasil
+                getkeranjang={this.getkeranjang}
                 sidebar={side}
                 toggleSide={toggleSide}
                 keranjangs={keranjang}

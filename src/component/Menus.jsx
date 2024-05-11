@@ -15,7 +15,7 @@ const Menus = ({ menu, masukKeranjang }) => {
         <Card.Img
           variant="top"
           src={
-            "./assets/images/" +
+            "../../public/images/" +
             menu.category.nama.toLowerCase() +
             "/" +
             menu.gambar
